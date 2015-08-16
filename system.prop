@@ -86,6 +86,11 @@ ro.vendor.extension_library=/vendor/lib/libqc-opt.so
 
 # Radio
 persist.radio.apn_delay=5000
+ro.telephony.default_network=22
+telephony.lteOnCdmaDevice=1
+
+# Set CDMA SUBSCRIPTION SOURCE to RUIM in Database for this device
+ro.telephony.default_cdma_sub=0
 
 # Camera
 camera2.portability.force_api=1
