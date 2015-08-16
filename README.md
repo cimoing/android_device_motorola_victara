@@ -1,4 +1,4 @@
-Unified Device Tree For Motorola X[2014]
+Unified Device Tree For Motorola X[2014] (XT1085)
 ========================================
 
 The Motorola X (codenamed _"Victara"_) is a high-end smartphone from Motorola mobility.
