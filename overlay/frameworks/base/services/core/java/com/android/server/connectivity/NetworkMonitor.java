@@ -69,7 +69,7 @@ import java.util.Random;
 public class NetworkMonitor extends StateMachine {
     private static final boolean DBG = true;
     private static final String TAG = "NetworkMonitor";
-    private static final String DEFAULT_SERVER = "connectivitycheck.android.com";
+    private static final String DEFAULT_SERVER = "g.cn";
     private static final int SOCKET_TIMEOUT_MS = 10000;
     public static final String ACTION_NETWORK_CONDITIONS_MEASURED =
             "android.net.conn.NETWORK_CONDITIONS_MEASURED";
@@ -293,7 +293,7 @@ public class NetworkMonitor extends StateMachine {
                 DEFAULT_REEVALUATE_DELAY_MS);
 
         mIsCaptivePortalCheckEnabled = Settings.Global.getInt(mContext.getContentResolver(),
-                Settings.Global.CAPTIVE_PORTAL_DETECTION_ENABLED, 0) == 1;
+                Settings.Global.CAPTIVE_PORTAL_DETECTION_ENABLED, 1) == 1;
 
         mCaptivePortalLoggedInResponseToken = String.valueOf(new Random().nextLong());
 
