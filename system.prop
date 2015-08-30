@@ -106,3 +106,6 @@ audio.offload.pcm.24bit.enable=true
 
 # product
 ro.product.model=XT1085
+
+# Play store
+ro.com.google.clientidbase.gmm=android-motorola
