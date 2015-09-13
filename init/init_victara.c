@@ -81,7 +81,7 @@ void vendor_load_properties()
         property_set("ro.product.model", "XT1085");
         property_set("ro.telephony.default_network", "22");
         property_set("telephony.lteOnCdmaDevice", "1");
-        property_set("ro.telephony.default_cdma_sub", "1");
+        property_set("ro.telephony.default_cdma_sub", "0");
     } else {
         /* all others */
         property_set("ro.product.model", "XT1095");
