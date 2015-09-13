@@ -71,12 +71,17 @@ void vendor_load_properties()
         property_set("ro.build.fingerprint", "motorola/victara_verizon/victara:5.1/LPE23.32-25-3/10:user/release-keys");
         property_set("ro.telephony.default_network", "10");
         property_set("telephony.lteOnCdmaDevice", "1");
-        property_set("ro.telephony.default_cdma_sub", "1");
+        property_set("ro.telephony.default_cdma_sub", "0");
         property_set("ro.ril.force_eri_from_xml", "true");
         property_set("ro.telephony.get_imsi_from_sim", "true");
         property_set("ro.com.google.clientidbase.am", "android-verizon");
         property_set("ro.com.google.clientidbase.ms", "android-verizon");
         property_set("ro.com.google.clientidbase.yt", "android-verizon");
+    } else if (strstr(cid,"0xB")){
+        property_set("ro.product.model", "XT1085");
+        property_set("ro.telephony.default_network", "22");
+        property_set("telephony.lteOnCdmaDevice", "1");
+        property_set("ro.telephony.default_cdma_sub", "1");
     } else {
         /* all others */
         property_set("ro.product.model", "XT1095");
