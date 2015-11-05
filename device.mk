@@ -184,7 +184,8 @@ PRODUCT_COPY_FILES += \
 
 # Motorola
 PRODUCT_PACKAGES += \
-    charge_only_mode
+    charge_only_mode \
+    libmoto
 
 # NFC
 PRODUCT_PACKAGES += \
@@ -249,6 +250,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libcurl \
     libxml2
+
+# Stlport
+PRODUCT_PACKAGES += \
+    libstlport
 
 # Thermal
 PRODUCT_COPY_FILES += \
