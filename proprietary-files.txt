@@ -195,7 +195,6 @@ vendor/lib/libWVStreamControlAPI_L1.so
 # GPS
 -app/com.qualcomm.location/com.qualcomm.location.apk
 -app/com.qualcomm.services.location/com.qualcomm.services.location.apk
--app/MotGeoFenceSvc/MotGeoFenceSvc.apk
 bin/gpsone_daemon
 etc/permissions/com.qualcomm.location.xml
 etc/gps.conf
@@ -324,7 +323,6 @@ bin/rild:bin/rild.mmi
 bin/rfs_access
 bin/rmt_storage
 lib/libadropbox.so
-lib/libcnefeatureconfig.so
 lib/libmdmcutback.so
 lib/libmdmdetect.so
 lib/libmotext_inf.so
