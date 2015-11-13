@@ -44,9 +44,13 @@ on init
 on fs
     mount_all fstab.qcom
 
-    # Keeping following partitions outside fstab file. As user may not have
-    # these partition flashed on the device. Failure to mount any partition in fstab file
-    # results in failure to launch late-start class.
+    # Create PDS mount point
+    mkdir /cache/pds 0755 root root
+    symlink /cache/pds /pds
+    restorecon_recursive /pds/
+
+    mkdir /pds/public/atvc 0770 mot_atvc shell
+    mkdir /pds/batt_health 0755 mot_pwric mot_pwric
 
     # arrange access to an available overlay
     mkdir /overlay 0755 root root
@@ -54,13 +58,7 @@ on fs
     exec /system/bin/checknmount -d -t ext4 /overlay/sysupdate /cache/overlay/sysupdate.simg /cache/overlay/sysupdate.jar
     exec /system/bin/stacker -d /system /overlay/sysupdate
 
-    wait /dev/block/platform/msm_sdcc.1/by-name/persist
-    mount ext4 /dev/block/platform/msm_sdcc.1/by-name/persist /persist nosuid nodev barrier=1
     restorecon_recursive /persist
-
-    wait /dev/block/platform/msm_sdcc.1/by-name/modem
-    exec /system/bin/resize2fs /dev/block/platform/msm_sdcc.1/by-name/modem
-    mount ext4 /dev/block/platform/msm_sdcc.1/by-name/modem /firmware ro nosuid nodev barrier=0 context=u:object_r:firmware_file:s0
 
 on post-fs-data
     mkdir /data/tombstones 0771 system system
@@ -92,8 +90,9 @@ service qseecomd /system/bin/qseecomd
    group root
 
 service mpdecision /system/bin/mpdecision --avg_comp
+   class late_start
    user root
-   disabled
+   group system
 
 service thermal-engine /system/bin/thermal-engine
    class main

@@ -86,6 +86,10 @@ TARGET_SCREEN_WIDTH := 1080
 
 $(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
 
+# Art
+PRODUCT_PROPERTY_OVERRIDES += \
+    dalvik.vm.dex2oat-swap=false
+
 # Audio
 PRODUCT_PACKAGES += \
     audio.a2dp.default \
@@ -142,8 +146,7 @@ PRODUCT_PACKAGES += \
     fsck.f2fs \
     make_ext4fs \
     mkfs.f2fs \
-    resize2fs \
-    setup_fs
+    resize2fs
 
 # GPS
 PRODUCT_PACKAGES += \
