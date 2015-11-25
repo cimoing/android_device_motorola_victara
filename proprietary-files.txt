@@ -87,7 +87,6 @@ lib/libmot-qc-fd-offline.so
 lib/libmotocalibration.so
 lib/libqomx_core.so
 vendor/lib/libadsprpc.so
-vendor/lib/libC2D2.so
 vendor/lib/libfastcvadsp_stub.so
 vendor/lib/libfastcvopt.so
 vendor/lib/libmmcamera2_c2d_module.so
@@ -168,7 +167,6 @@ vendor/lib/libthermalioctl.so
 
 # DRM
 bin/qseecomd
-lib/drm/libfwdlockengine.so
 lib/libdrmdiag.so
 lib/libdrmfs.so
 lib/libdrmtime.so
@@ -186,7 +184,6 @@ vendor/lib/libsecureui.so
 vendor/lib/lib-sec-disp.so
 vendor/lib/drm/libdrmwvmplugin.so
 vendor/lib/mediadrm/libwvdrmengine.so
-vendor/lib/mediadrm/libdrmclearkeyplugin.so
 vendor/lib/libwvdrm_L1.so
 vendor/lib/libwvm.so
 vendor/lib/libWVphoneAPI.so
@@ -221,6 +218,7 @@ vendor/lib/egl/libq3dtools_adreno.so
 vendor/lib/libadreno_utils.so
 vendor/lib/libbccQTI.so
 vendor/lib/libC2D2.so
+vendor/lib/libc2d30.so
 vendor/lib/libc2d30-a3xx.so
 vendor/lib/libCB.so
 vendor/lib/libgsl.so
@@ -318,7 +316,7 @@ bin/qcks
 bin/qmi_motext_hook
 bin/qmuxd
 bin/radish
-bin/rild:bin/rild.mmi
+bin/rild
 bin/rfs_access
 bin/rmt_storage
 lib/libadropbox.so
