@@ -39,10 +39,12 @@ persist.hwc.mdpcomp.enable=true
 # System property for cabl
 ro.qualcomm.cabl=0
 
-ro.qc.sdk.audio.fluencetype=none
+af.fast_track_multiplier=1
+audio_hal.period_size=192
+ro.qc.sdk.audio.fluencetype=fluence
 persist.audio.fluence.voicecall=true
 persist.audio.fluence.voicerec=false
-persist.audio.fluence.speaker=true
+persist.audio.fluence.speaker=false
 ro.config.vc_call_vol_steps=7
 # FM maximum volume be between 0 and 8192 (0dB)
 ro.audio.fm_max_volume=5793
@@ -81,16 +83,24 @@ ro.sf.lcd_density=480
 ro.hw.device=victara
 
 # QCOM
-ro.vendor.extension_library=/vendor/lib/libqc-opt.so
+ro.vendor.extension_library=/vendor/lib/libqti-perfd-client.so
 
 # Radio
 persist.radio.apn_delay=5000
 
 # Camera
 camera2.portability.force_api=1
+media.stagefright.legacyencoder=true
+media.stagefright.less-secure=true
 
 # Play store
 ro.com.google.clientidbase.gmm=android-motorola
 
+# Storage
+ro.sys.sdcardfs=true
+
 # Wifi
 ro.disableWifiApFirmwareReload=true
+
+# Bluetooth
+qcom.bluetooth.soc=smd

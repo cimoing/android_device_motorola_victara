@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016 The CyanogenMod Project
+ * Copyright (c) 2016 The CyanogenMod Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,10 +14,18 @@
  * limitations under the License.
  */
 
-/* TODO: Actually provide implementations for these function! */
+package com.cyanogenmod.settings.device;
 
-//libjustshoot.so
-void _ZN7android10MediaCodec12CreateByTypeERKNS_2spINS_7ALooperEEEPKcbPii() {}
+import android.os.Bundle;
 
-//libjscore.so
-void _ZN7android11AudioSourceC1E14audio_source_tRKNS_8String16Ejjj() {}
+import com.android.settingslib.drawer.SettingsDrawerActivity;
+
+public class TouchscreenGesturePreferenceActivity extends SettingsDrawerActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        getFragmentManager().beginTransaction()
+                .replace(R.id.content_frame, new TouchscreenGesturePreferenceFragment()).commit();
+    }
+}
